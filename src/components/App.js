@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from "../contexts/AuthContext";
 import "../styles/App.css";
 import Layout from "./Layout";
 import Home from "./pages/Home";
@@ -11,7 +12,8 @@ import Signup from "./pages/Singup";
 function App() {
   return (
     <Router>
-      <Routes>
+      <AuthProvider>
+        <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home/>}/>
             <Route path="signup" element={<Signup/>}/>
@@ -21,6 +23,7 @@ function App() {
             <Route path="*" element={<NoPage/>}/>
           </Route>
         </Routes>
+      </AuthProvider>
     </Router>
   );
 }

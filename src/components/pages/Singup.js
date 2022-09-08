@@ -1,8 +1,8 @@
 import classes from '../../styles/Signup.module.css';
 import Button from '../Button';
 import Chackbox from '../Checkbox';
+import Form from '../Form';
 import Illustration from '../Illustration';
-import Form from '../pages/Form';
 import TextInput from '../TextInput';
 
 export default function Signup() {

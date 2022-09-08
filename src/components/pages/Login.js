@@ -1,7 +1,7 @@
+import Form from "../../components/Form";
 import classes from "../../styles/Login.module.css";
 import Button from "../Button";
 import Illustration from "../Illustration";
-import Form from "../pages/Form";
 import TextInput from "../TextInput";
 
 export default function Login() {

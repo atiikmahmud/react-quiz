@@ -10,6 +10,7 @@ import Result from "./pages/Result";
 import Signup from "./pages/Singup";
 import PrivateOutlate from './PrivateOutlet';
 import PrivateRoute from './PrivateRoute';
+import PublicOutlate from './PublicOutlet';
 
 function App() {
   return (
@@ -18,8 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout/>}>
             <Route index element={<Home/>}/>
-            <Route path="signup" element={<Signup/>}/>
-            <Route path="login" element={<Login/>}/>
+            <Route path="/*" element={ <PublicOutlate /> }>
+              <Route path="signup" element={<Signup/>}/>
+              <Route path="login" element={<Login/>}/>
+            </Route>
             <Route path="quiz" element={<PrivateRoute><Quiz/></PrivateRoute>}/>
             <Route path="/*" element={<PrivateOutlate />}>
               <Route path="result" element={<Result/>}/>

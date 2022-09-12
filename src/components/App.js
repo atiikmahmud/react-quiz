@@ -23,7 +23,7 @@ function App() {
               <Route path="signup" element={<Signup/>}/>
               <Route path="login" element={<Login/>}/>
             </Route>
-            <Route path="quiz" element={<PrivateRoute><Quiz/></PrivateRoute>}/>
+            <Route path="quiz/:id" element={<PrivateRoute><Quiz/></PrivateRoute>}/>
             <Route path="/*" element={<PrivateOutlate />}>
               <Route path="result" element={<Result/>}/>
             </Route>

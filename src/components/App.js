@@ -8,6 +8,8 @@ import NoPage from "./pages/NoPage";
 import Quiz from "./pages/Quiz";
 import Result from "./pages/Result";
 import Signup from "./pages/Singup";
+import PrivateOutlate from './PrivateOutlet';
+import PrivateRoute from './PrivateRoute';
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
             <Route index element={<Home/>}/>
             <Route path="signup" element={<Signup/>}/>
             <Route path="login" element={<Login/>}/>
-            <Route path="quiz" element={<Quiz/>}/>
-            <Route path="result" element={<Result/>}/>
+            <Route path="quiz" element={<PrivateRoute><Quiz/></PrivateRoute>}/>
+            <Route path="/*" element={<PrivateOutlate />}>
+              <Route path="result" element={<Result/>}/>
+            </Route>
             <Route path="*" element={<NoPage/>}/>
           </Route>
         </Routes>
